@@ -41,7 +41,7 @@ To randomize the display order of media files, use the **Random Seed** option. I
 
 ### Captions
 
-To add captions, place your caption prompt files in the `captions` folder in YAML format. The YAML file should follow this structure:
+To add captions, place your caption files in the `captions` folder in YAML format. The YAML file should follow this structure:
 ```yaml
 filename1: prompt1
 filename2: prompt2
