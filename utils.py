@@ -76,7 +76,7 @@ def set_default_values():
     if "page_id" not in st.session_state:
         st.session_state["page_id"] = 0
     if "num_samples_per_page" not in st.session_state:
-        st.session_state["input_num_samples_per_page"] = 10
+        st.session_state["input_num_samples_per_page"] = 4
     if "caption_path" not in st.session_state:
         st.session_state["caption_path"] = None
 
@@ -144,8 +144,8 @@ def restore_from_config(
         return
     config = yaml.load(open(path, "r"), Loader=yaml.FullLoader)
     st.session_state["num_folders"] = config["num_folders"]
-    st.session_state["random_seed"] = config["random_seed"]
-    st.session_state["num_samples_per_page"] = config["num_samples_per_page"]
+    st.session_state["input_random_seed"] = config["random_seed"]
+    st.session_state["input_num_samples_per_page"] = config["num_samples_per_page"]
     st.session_state["caption_path"] = config["caption_path"]
     for i in range(config["num_folders"]):
         st.session_state[folder_path_format.format(i)] = config["folder_paths"][i]

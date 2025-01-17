@@ -37,12 +37,7 @@ def main():
     page_id = st.session_state["page_id"]
 
     with st.sidebar:
-        st.number_input(
-            "Number of Samples Per Page",
-            key="num_samples_per_page",
-            min_value=1,
-            max_value=50,
-        )
+        st.number_input("Number of Samples Per Page", key="num_samples_per_page", min_value=1, max_value=50)
         st.number_input("Random Seed", key="random_seed", min_value=-1)
 
         caption_path_selectbox()
@@ -139,9 +134,11 @@ def main():
                                     os.path.join(dirpath, matched_file), caption=display_name, use_container_width=True
                                 )
                             else:
-                                st.video(
-                                    os.path.join(dirpath, match_file(dirpath, file_name)), loop=True, autoplay=True
-                                )
+                                with st.container():
+                                    st.video(
+                                        os.path.join(dirpath, match_file(dirpath, file_name)), loop=True, autoplay=True
+                                    )
+                                    st.markdown(display_name)
                     caption = get_caption(captions, file_name)
             if caption is None:
                 st.markdown(f"**{file_name}**")
