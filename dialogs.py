@@ -92,7 +92,7 @@ def load_config_window(
     for root, dirs, files in os.walk(config_dirpath):
         for file in files:
             if file.endswith((".yaml", ".yml", ".YAML", ".YML")):
-                options.append(os.path.relpath(os.path.join(root, file), root))
+                options.append(os.path.relpath(os.path.join(root, file), config_dirpath))
     options = sorted(options)
     config_path = st.selectbox("Path to a Configuration File", options=options, key="load_config_path")
     if st.button("Finish", key="load_finish"):

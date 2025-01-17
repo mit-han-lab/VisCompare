@@ -6,7 +6,6 @@ import streamlit as st
 import yaml
 
 from variables import ALLOWED_EXTENSIONS, CAPTION_PATH_OPTIONS
-from datetime import datetime
 
 
 def caption_path_selectbox() -> str | None:
@@ -16,7 +15,7 @@ def caption_path_selectbox() -> str | None:
     for root, dirs, files in os.walk(caption_dirpath):
         for file in files:
             if file.endswith((".yaml", ".yml", ".YAML", ".YML")):
-                caption_paths.append(os.path.relpath(os.path.join(root, file), root))
+                caption_paths.append(os.path.relpath(os.path.join(root, file), caption_dirpath))
     caption_paths = sorted(caption_paths)
     options.extend(caption_paths)
     default_caption_path = st.session_state.get("caption_path", None)
