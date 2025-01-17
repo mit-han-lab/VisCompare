@@ -1,0 +1,10 @@
+caption_path: example.yaml
+display_names:
+- FLUX.1-schnell (BF16)
+- SVDQuant (INT4)
+folder_paths:
+- images/bf16
+- images/int4
+num_folders: 2
+num_samples_per_page: 10
+random_seed: 0
