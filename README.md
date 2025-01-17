@@ -47,7 +47,7 @@ filename1: prompt1
 filename2: prompt2
 filename3: prompt3
 ```
-Here, `filename` refers to the media file name without the file extension. For an example, refer to [example.yaml](captions/example.yaml). Once added, your caption file will appear as an option under "Path to the Caption File."
+Here, `filename` refers to the media file name without the file extension. For an example, refer to [example.yaml](captions/example.yaml). Once added, your caption file will appear as an option under **Path to the Caption File**.
 
 ### Save and Load
 You can save the application's current state by clicking the **Save** button and entering a save path. The state is saved as a YAML file in the `configs` folder. To load a saved state, click the **Load** button and select the desired file path.
