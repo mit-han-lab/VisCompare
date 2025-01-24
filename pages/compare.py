@@ -130,9 +130,9 @@ def main():
                         if dirpath != "" and os.path.isdir(dirpath):
                             matched_file = match_file(dirpath, file_name)
                             if matched_file.endswith(IMAGE_EXTENSIONS):
-                                st.image(
-                                    os.path.join(dirpath, matched_file), caption=display_name, use_container_width=True
-                                )
+                                with st.container():
+                                    st.image(os.path.join(dirpath, matched_file), use_container_width=True)
+                                    st.markdown(display_name)
                             else:
                                 with st.container():
                                     st.video(
